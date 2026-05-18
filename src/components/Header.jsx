@@ -1,4 +1,4 @@
-import "./Header.css"
+import "../styles/Header.css"
 
 export default function Header() {
   return (
@@ -8,7 +8,7 @@ export default function Header() {
           <div className="logo-icon">✦</div>
           <div className="logo-text">
             <h2>Dhriti</h2>
-            <span>RehabCenter</span>
+            <span>Rehab Center</span>
           </div>
         </div>
 

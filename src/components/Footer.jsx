@@ -1,4 +1,4 @@
-import "./Footer.css"
+import "../styles/Footer.css"
 
 export default function Footer() {
   return (
@@ -10,13 +10,13 @@ export default function Footer() {
           <div className="footer-logo">
             <div className="footer-logo-icon">✦</div>
             <div>
-              <h2>Dhriti RehabCenter</h2>
+              <h2>Dhriti Rehab Center</h2>
               <span>Healing • Support • Recovery</span>
             </div>
           </div>
 
           <p className="footer-description">
-            Providing compassionate, evidence‑based rehabilitation and mental health support.
+            Providing compassionate, evidence based rehabilitation and mental health support.
             You are not alone — recovery begins with the first step.
           </p>
 

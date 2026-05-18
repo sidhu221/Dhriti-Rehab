@@ -4,6 +4,7 @@ import Services from "./Services"
 import Testimonials from "./Testimonials"
 import Contact from "./Contact"
 import Hero from "../components/Hero"
+import "../components/Location"
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <Hero />
       <main>
         <section>
-          <h1>Welcome to Dhriti Rehab</h1>
+          <h1>Welcome to Dhriti Rehab Center</h1>
           <p>Your path to wellness, support, and positive change starts here.</p>
         </section>
 
@@ -26,6 +27,10 @@ export default function Home() {
 
         <section>
           <Contact />
+        </section>
+
+        <section>
+          <Location />
         </section>
       </main>
 
