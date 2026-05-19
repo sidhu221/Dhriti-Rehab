@@ -1,41 +1,54 @@
-.hero {
-  width: 100%;
-  padding: 6rem 2rem;
-  text-align: center;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
-    ),
-    url("/images/hero-banner.jpg") center/cover no-repeat;
-  color: white;
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 3rem;
 }
 
 .hero-content {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 550px;
 }
 
-.hero h1 {
-  font-size: 3rem;
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: #0f3d3e;
 }
 
-.hero p {
-  font-size: 1.25rem;
+.hero-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
   margin-bottom: 2rem;
 }
 
-.hero-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #4c8bf5;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.2s ease;
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
 }
 
-.hero-button:hover {
-  background: #3a6fd1;
+.primary-btn {
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(90deg, #4cb5ae, #6ed3c7);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  padding: 0.8rem 1.6rem;
+  border: 2px solid #4cb5ae;
+  color: #4cb5ae;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-image img {
+  width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }

@@ -1,0 +1,60 @@
+.programs-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.programs-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f3d3e;
+  margin-bottom: 0.5rem;
+}
+
+.programs-subtitle {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  color: #555;
+  line-height: 1.6;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.program-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 26px rgba(0,0,0,0.15);
+}
+
+.program-card h3 {
+  font-size: 1.3rem;
+  color: #0f3d3e;
+  margin-bottom: 0.75rem;
+}
+
+.program-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.program-link {
+  color: #4cb5ae;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.program-link:hover {
+  text-decoration: underline;
+}

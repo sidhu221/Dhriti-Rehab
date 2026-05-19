@@ -1,4 +1,4 @@
-import "../styles/Header.css"
+import "./Header.css"
 
 export default function Header() {
   return (
@@ -8,13 +8,13 @@ export default function Header() {
           <div className="logo-icon">✦</div>
           <div className="logo-text">
             <h2>Dhriti</h2>
-            <span>Rehab Center</span>
+            <span>RehabCenter</span>
           </div>
         </div>
 
         <nav className="nav-links">
           <a href="/">Home</a>
-          <a href="/services">Services</a>
+          <a href="/programs">Programs</a>
           <a href="/conditions">Conditions</a>
           <a href="/providers">Providers</a>
           <a href="/testimonials">Testimonials</a>

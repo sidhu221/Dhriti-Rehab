@@ -1,33 +1,25 @@
-import "../styles/Footer.css"
+import "./Footer.css"
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
 
-        {/* LEFT SECTION — LOGO + DESCRIPTION */}
-        <div className="footer-section footer-about">
+        <div className="footer-about">
           <div className="footer-logo">
             <div className="footer-logo-icon">✦</div>
             <div>
-              <h2>Dhriti Rehab Center</h2>
+              <h2>Dhriti RehabCenter</h2>
               <span>Healing • Support • Recovery</span>
             </div>
           </div>
 
-          <p className="footer-description">
-            Providing compassionate, evidence based rehabilitation and mental health support.
-            You are not alone — recovery begins with the first step.
+          <p>
+            Providing compassionate, evidence‑based rehabilitation and mental wellness
+            support. You are not alone — your journey forward starts here.
           </p>
-
-          <div className="footer-socials">
-            <a href="#">🌐</a>
-            <a href="#">📘</a>
-            <a href="#">💼</a>
-          </div>
         </div>
 
-        {/* SERVICES */}
         <div className="footer-section">
           <h3>Programs</h3>
           <ul>
@@ -40,7 +32,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* CONDITIONS */}
         <div className="footer-section">
           <h3>Conditions</h3>
           <ul>
@@ -53,7 +44,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* COMPANY */}
         <div className="footer-section">
           <h3>Company</h3>
           <ul>
@@ -67,13 +57,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
       <div className="footer-bottom">
         <p>© 2026 Dhriti RehabCenter. All rights reserved.</p>
-        <p className="crisis-text">
-          If you are in crisis, call or text <strong>988</strong> for 24/7 support.
+        <p className="crisis">
+          If you ever feel unsafe or overwhelmed, you can call or text 988 for support anytime.
         </p>
       </div>
     </footer>
   )
 }
+s
