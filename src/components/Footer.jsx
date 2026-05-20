@@ -5,6 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
 
+        {/* About Section */}
         <div className="footer-about">
           <div className="footer-logo">
             <div className="footer-logo-icon">✦</div>
@@ -20,43 +21,47 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Programs Section */}
         <div className="footer-section">
           <h3>Programs</h3>
           <ul>
-            <li><a href="/programs">Rehabilitation Programs</a></li>
-            <li><a href="/therapy">Therapy & Counseling</a></li>
-            <li><a href="/youth">Youth Support</a></li>
-            <li><a href="/family">Family Therapy</a></li>
-            <li><a href="/aftercare">Aftercare Planning</a></li>
-            <li><a href="/telehealth">Telehealth Sessions</a></li>
+            <li><a href="#">Rehabilitation Programs</a></li>
+            <li><a href="#">Therapy & Counseling</a></li>
+            <li><a href="#">Youth Support</a></li>
+            <li><a href="#">Family Therapy</a></li>
+            <li><a href="#">Aftercare Planning</a></li>
+            <li><a href="#">Telehealth Sessions</a></li>
           </ul>
         </div>
 
+        {/* Conditions Section */}
         <div className="footer-section">
           <h3>Conditions</h3>
           <ul>
-            <li><a href="/anxiety">Anxiety</a></li>
-            <li><a href="/depression">Depression</a></li>
-            <li><a href="/addiction">Addiction Recovery</a></li>
-            <li><a href="/trauma">Trauma & PTSD</a></li>
-            <li><a href="/adhd">ADHD</a></li>
-            <li><a href="/bipolar">Bipolar Disorder</a></li>
+            <li><a href="#">Anxiety</a></li>
+            <li><a href="#">Depression</a></li>
+            <li><a href="#">Addiction Recovery</a></li>
+            <li><a href="#">Trauma & PTSD</a></li>
+            <li><a href="#">ADHD</a></li>
+            <li><a href="#">Bipolar Disorder</a></li>
           </ul>
         </div>
 
+        {/* Company Section */}
         <div className="footer-section">
           <h3>Company</h3>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/providers">Our Providers</a></li>
-            <li><a href="/careers">Careers</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/portal">Patient Portal</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Providers</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Patient Portal</a></li>
           </ul>
         </div>
       </div>
 
+      {/* Bottom Bar */}
       <div className="footer-bottom">
         <p>© 2026 Dhriti RehabCenter. All rights reserved.</p>
         <p className="crisis">
@@ -66,4 +71,3 @@ export default function Footer() {
     </footer>
   )
 }
-s

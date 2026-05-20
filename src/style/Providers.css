@@ -1,0 +1,54 @@
+.providers-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.providers-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0f3d3e;
+}
+
+.providers-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.providers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.provider-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+.provider-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.provider-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.provider-contact p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.provider-contact a {
+  color: #4cb5ae;
+  font-weight: 600;
+}

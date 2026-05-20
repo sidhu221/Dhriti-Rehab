@@ -1,16 +1,16 @@
 import Header from "../components/Header"
 import Hero from "../components/Hero"
-import Location from "../components/Location"
 import Footer from "../components/Footer"
-import Programs from "./Programs"
+import Location from "../components/Location"
+import Testimonials from "../components/Testimonial"
 
 export default function Home() {
   return (
     <>
       <Header />
       <Hero />
-      <Programs />
       <Location />
+      <Testimonials />
       <Footer />
     </>
   )
