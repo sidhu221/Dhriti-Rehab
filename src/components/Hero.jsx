@@ -21,6 +21,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-image">
+        {/* REPLACE WITH REAL IMAGE */}
         <img src="/images/hero.jpg" alt="Dhriti RehabCenter" />
       </div>
     </section>
