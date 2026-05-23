@@ -1,0 +1,50 @@
+/* EMERGENCY BOX */
+.emergency-box {
+  background: #ffe5e5;
+  border: 1px solid #ffb3b3;
+  padding: 22px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.emergency-box h3 {
+  color: #b30000;
+  margin-bottom: 10px;
+}
+
+.emergency-number {
+  font-size: 1.8rem;
+  color: #b30000;
+  display: block;
+  margin: 10px 0;
+}
+
+/* DO'S AND DON'TS */
+.dos-donts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.dos-box {
+  background: #e6f4ea;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.donts-box {
+  background: #fde9e3;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.check-icon {
+  color: #2e7d32;
+  margin-right: 8px;
+}
+
+.x-icon {
+  color: #c62828;
+  margin-right: 8px;
+}

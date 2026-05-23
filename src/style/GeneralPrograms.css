@@ -1,0 +1,115 @@
+/* MAIN LAYOUT */
+.program-layout {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr; /* left text | right column */
+  gap: 40px;
+  align-items: start;
+}
+
+/* RIGHT COLUMN STACK */
+.program-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* IMAGE FIX */
+.general-program-image {
+  width: 100%;
+  max-width: 260px;     /* keeps image small */
+  border-radius: 12px;
+  display: block;
+  margin-left: auto;    /* pushes image to the right */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+/* SIDEBAR */
+.program-sidebar {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .program-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .general-program-image {
+    margin: 0 auto;
+  }
+
+  .program-sidebar {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* PROVIDER BOX */
+.provider-box {
+  background: #e8f2ff;
+  padding: 32px;
+  border-radius: 14px;
+  margin-top: 55px; /* bigger gap */
+  border: 1px solid #c9dcff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.provider-box h3 {
+  margin-bottom: 12px;
+  color: #0f3d3e;
+  font-size: 1.3rem;
+}
+
+.provider-box p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* IMPROVED BUTTON */
+.provider-button {
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #4cb5ae, #3aa59e);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.provider-button:hover {
+  background: linear-gradient(135deg, #3aa59e, #2f8f88);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+
+/* MAKE IMAGE WIDER BUT SAME HEIGHT */
+.general-program-image {
+  width: 100%;
+  max-width: 360px;   /* increased width */
+  height: 220px;      /* fixed height */
+  object-fit: cover;  /* keeps proportions clean */
+  border-radius: 12px;
+  display: block;
+  margin-left: auto;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+/* RIGHT COLUMN STACK */
+.program-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* slightly increased spacing */
+}

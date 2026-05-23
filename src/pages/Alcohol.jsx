@@ -32,6 +32,7 @@ export default function AlcoholDeAddiction() {
 
             <h2>How the Program Works</h2>
             <p>
+              This is a 28 day (4 week) program that begins with a supervised stabilization phase, that involves 1 week of detox and 3 weeks of psychological therapy.
               Treatment begins with a supervised stabilization phase, followed by
               personalized therapy sessions. You’ll work with trained clinicians who
               help you understand triggers, build coping strategies, and strengthen
@@ -68,6 +69,18 @@ export default function AlcoholDeAddiction() {
             <li><span className="x-icon">✘</span> Don’t compare your recovery pace to others — healing looks different for everyone.</li>
             </ul>
         </div>
+
+        {/* EMERGENCY BOX */}
+            <div className="emergency-box">
+              <h3>Emergency Support</h3>
+              <p>
+                If you or someone around you is in immediate danger or experiencing a
+                crisis, please contact India’s emergency helpline:
+              </p>
+              <strong className="emergency-number">112</strong>
+              <p>This number is available 24/7 for urgent assistance.</p>
+            </div>
+
 
         </div>
 

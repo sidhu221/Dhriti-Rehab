@@ -25,16 +25,15 @@ export default function Footer() {
         <div className="footer-section">
           <h3>Programs</h3>
           <ul>
-            <li><a href="#">Rehabilitation Programs</a></li>
-            <li><a href="#">Therapy & Counseling</a></li>
-            <li><a href="#">Youth Support</a></li>
-            <li><a href="#">Family Therapy</a></li>
-            <li><a href="#">Aftercare Planning</a></li>
-            <li><a href="#">Telehealth Sessions</a></li>
+            <li><a href="#">Alcohol De-Addiction</a></li>
+            <li><a href="#">Drug De-Addiction</a></li>
+            <li><a href="#">Adult Psychiatry</a></li>
+            <li><a href="#">Psychological Services</a></li>
+            <li><a href="#">Detox & Stabilization</a></li>
           </ul>
         </div>
 
-        {/* Conditions Section */}
+        {/*
         <div className="footer-section">
           <h3>Conditions</h3>
           <ul>
@@ -46,6 +45,7 @@ export default function Footer() {
             <li><a href="#">Bipolar Disorder</a></li>
           </ul>
         </div>
+          */}
 
         {/* Company Section */}
         <div className="footer-section">
@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>© 2026 Dhriti RehabCenter. All rights reserved.</p>
         <p className="crisis">
-          If you ever feel unsafe or overwhelmed, you can call or text 988 for support anytime.
+          In the event of an emergency, call 112 for support anytime.
         </p>
       </div>
     </footer>

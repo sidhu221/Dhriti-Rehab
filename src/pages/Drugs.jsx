@@ -26,13 +26,13 @@ export default function DrugsDeAddiction() {
             <h2>What This Program Helps With</h2>
             <p>
               Many people experience physical or emotional discomfort when reducing
-              alcohol use. Our team provides supportive monitoring and therapeutic
+              drug use. Our team provides supportive monitoring and therapeutic
               care to help you move through this stage safely and confidently.
             </p>
 
             <h2>How the Program Works</h2>
             <p>
-              This is a 4 week program that begins with a supervised stabilization phase, that involves 1 week of detox and 3 weeks of psychological therapy.
+              This is a 28 day (4 week) program that begins with a supervised stabilization phase, that involves 1 week of detox and 3 weeks of psychological therapy.
               Treatment begins with a supervised stabilization phase, followed by
               personalized therapy sessions. You’ll work with trained clinicians who
               help you understand triggers, build coping strategies, and strengthen
@@ -72,6 +72,18 @@ export default function DrugsDeAddiction() {
             <li><span className="x-icon">✘</span> Don’t isolate yourself — connection is one of the strongest tools in recovery.</li>
         </ul>
         </div>
+
+        {/* EMERGENCY BOX */}
+            <div className="emergency-box">
+              <h3>Emergency Support</h3>
+              <p>
+                If you or someone around you is in immediate danger or experiencing a
+                crisis, please contact India’s emergency helpline:
+              </p>
+              <strong className="emergency-number">112</strong>
+              <p>This number is available 24/7 for urgent assistance.</p>
+            </div>
+
 
 
         </div>

@@ -14,11 +14,13 @@ export default function Header() {
 
         <nav className="nav-links">
           <a href="/">Home</a>
+          <a href="/about">About Us</a>
           <a href="/programs">Programs</a>
-          <a href="/conditions">Conditions</a>
+          {/* <a href="/conditions">Conditions</a> */}
           <a href="/providers">Providers</a>
           <a href="/telehealth">Telehealth</a>
-          <a href="/FAQ">FAQ</a>
+          {/*<a href="/FAQ">FAQ</a>
+          <a href="/about">Gallery</a> */}
           <a href="/contact">Contact</a>
         </nav>
       </div>

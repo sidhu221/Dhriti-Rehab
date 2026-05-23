@@ -1,0 +1,32 @@
+/* EMERGENCY BOX */
+.emergency-box {
+  background: #ffe5e5;
+  border: 1px solid #ffb3b3;
+  padding: 22px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.emergency-box h3 {
+  color: #b30000;
+  margin-bottom: 10px;
+}
+
+.emergency-number {
+  font-size: 1.8rem;
+  color: #b30000;
+  display: block;
+  margin: 10px 0;
+}
+
+/* IMAGE SIZING */
+.psych-services-image {
+  width: 100%;
+  max-width: 360px;   /* wider */
+  height: 220px;      /* same height */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-left: auto;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
