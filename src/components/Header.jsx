@@ -26,6 +26,7 @@ export default function Header() {
       </div>
 
       <div className="header-right">
+        <a href="/login">Login</a>
         <a href="/appointment" className="appointment-btn">
           Book Appointment
         </a>

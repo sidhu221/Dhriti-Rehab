@@ -1,0 +1,113 @@
+.appointment-page {
+  padding: 120px 20px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0f3d3e;
+}
+
+/* CALENDAR */
+.calendar-box {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.calendar-input {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* TIME SLOTS */
+.timeslot-container h2 {
+  margin-bottom: 15px;
+}
+
+.timeslot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.timeslot {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.timeslot:hover {
+  transform: translateY(-3px);
+}
+
+.timeslot.occupied {
+  background: #e0e0e0;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.slot-time {
+  font-weight: 700;
+  display: block;
+}
+
+.slot-doctor {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.book-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #4cb5ae, #3aa59e);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.close-btn {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}

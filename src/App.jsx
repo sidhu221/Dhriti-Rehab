@@ -8,6 +8,10 @@ import AdultPsychiatry from "./pages/Adult-Psychiatry"
 import Programs from "./pages/Programs"
 import PsychologicalServices from "./pages/Psych-Services"
 import Detox from "./pages/Detox"
+import Contact from "./pages/Contact"
+import Login from "./pages/Login"
+import About from "./pages/About"
+import Appointment from "./pages/Appointment"
 
 export default function App() {
   return (
@@ -21,6 +25,10 @@ export default function App() {
       <Route path="/programs/psychology" element={<PsychologicalServices />} />
       <Route path="/programs/detox" element={<Detox />} />
       <Route path="/programs" element={<Programs />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/appointment" element={<Appointment />} />
     </Routes>
   )
 }

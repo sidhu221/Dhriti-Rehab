@@ -59,6 +59,12 @@
   color: #4cb5ae;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .header-right .appointment-btn {
   padding: 0.6rem 1.2rem;
   background: linear-gradient(90deg, #4cb5ae, #6ed3c7);
