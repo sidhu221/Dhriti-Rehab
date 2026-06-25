@@ -10,10 +10,14 @@ import PsychologicalServices from "./pages/Psych-Services"
 import Detox from "./pages/Detox"
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
+import Signup from "./pages/Signup"
+import ForgotPassword from "./pages/ForgotPassword"
 import About from "./pages/About"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
 import Appointment from "./pages/Appointment"
 import AppointmentDetails from "./pages/AppointmentDetails"
 import DoctorDashboard from "./pages/DoctorDashboard"
+import PatientDashboard from "./pages/PatientDashboard"
 
 export default function App() {
   return (
@@ -30,10 +34,14 @@ export default function App() {
       <Route path="/programs" element={<Programs />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/about" element={<About />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/appointment" element={<Appointment />} />
       <Route path="/appointment/:id" element={<AppointmentDetails />} />
       <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+      <Route path="/patient-dashboard" element={<PatientDashboard />} />
 
     </Routes>
   )

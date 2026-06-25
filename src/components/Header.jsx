@@ -1,35 +1,37 @@
-import "../style/Header.css"
+﻿import "../style/Header.css"
+import { Link, NavLink } from "react-router-dom"
 
 export default function Header() {
   return (
     <header className="header">
       <div className="header-left">
-        <div className="logo">
-          <div className="logo-icon">✦</div>
+        <Link to="/" className="logo" aria-label="Dhriti Rehab Center home">
+          <img
+            className="logo-image"
+            src="/dhriti-logo.svg"
+            alt="Dhriti Rehab Center"
+          />
           <div className="logo-text">
             <h2>Dhriti</h2>
-            <span>RehabCenter</span>
+            <span>Rehab Center</span>
           </div>
-        </div>
+        </Link>
 
-        <nav className="nav-links">
-          <a href="/">Home</a>
-          <a href="/about">About Us</a>
-          <a href="/programs">Programs</a>
-          {/* <a href="/conditions">Conditions</a> */}
-          <a href="/providers">Providers</a>
-          <a href="/telehealth">Telehealth</a>
-          {/*<a href="/FAQ">FAQ</a>
-          <a href="/about">Gallery</a> */}
-          <a href="/contact">Contact</a>
+        <nav className="nav-links" aria-label="Primary navigation">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About Us</NavLink>
+          <NavLink to="/programs">Programs</NavLink>
+          <NavLink to="/providers">Providers</NavLink>
+          <NavLink to="/telehealth">Telehealth</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
       </div>
 
       <div className="header-right">
-        <a href="/login">Login</a>
-        <a href="/appointment" className="appointment-btn">
+        <Link to="/login" className="login-link">Login</Link>
+        <Link to="/appointment" className="appointment-btn">
           Book Appointment
-        </a>
+        </Link>
       </div>
     </header>
   )
