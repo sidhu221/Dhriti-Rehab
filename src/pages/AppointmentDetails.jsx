@@ -58,7 +58,7 @@ export default function AppointmentDetails() {
           <div className="details-card">
             <h1>Patient Details</h1>
             <p>
-              <strong>Doctor:</strong> {slot.doctor.name}<br />
+              <strong>Doctor:</strong> {slot.doctor?.name || "Dr. Dhriti"}<br />
               <strong>Date:</strong> {slot.date}<br />
               <strong>Time:</strong> {slot.time}
             </p>
@@ -99,10 +99,10 @@ export default function AppointmentDetails() {
           <div className="details-card">
             <h1>Appointment Confirmed</h1>
             <p>
-              <strong>Doctor:</strong> {confirmed.doctors.name}<br />
+              <strong>Doctor:</strong> {confirmed.doctors?.name || "Dr. Dhriti"}<br />
               <strong>Date:</strong> {confirmed.date}<br />
               <strong>Time:</strong> {confirmed.time}<br />
-              <strong>Contact:</strong> {confirmed.doctors.phone}
+              <strong>Contact:</strong> {confirmed.doctors?.phone || "Contact clinic"}
             </p>
 
             <p>

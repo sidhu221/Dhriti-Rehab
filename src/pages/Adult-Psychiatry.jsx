@@ -62,16 +62,6 @@ export default function AdultPsychiatry() {
                   <li><span className="x-icon">✘</span> Don’t skip follow‑ups or recommended therapy sessions — consistency matters.</li>
                 </ul>
               </div>
-{/* EMERGENCY BOX */}
-            <div className="emergency-box">
-              <h3>Emergency Support</h3>
-              <p>
-                If you or someone around you is in immediate danger or experiencing a
-                crisis, please contact India’s emergency helpline:
-              </p>
-              <strong className="emergency-number">112</strong>
-              <p>This number is available 24/7 for urgent assistance.</p>
-            </div>
             </div>
           </div>
 

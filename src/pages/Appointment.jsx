@@ -4,6 +4,7 @@ import Footer from "../components/Footer"
 import { useCallback, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAppointmentsByDate, ensureScheduleForDate } from "../api/appointments"
+import { getDoctors } from "../api/doctors"
 
 function getTodayDate() {
   return new Date().toISOString().slice(0, 10)
@@ -15,14 +16,15 @@ export default function Appointment() {
   const [slots, setSlots] = useState([])
   const [loading, setLoading] = useState(false)
   const [selectedSlot, setSelectedSlot] = useState(null)
+  const [selectedDoctor, setSelectedDoctor] = useState("")
 
   // Creates slots when needed, then loads the complete schedule for the chosen date.
-  const loadSchedule = useCallback(async (date) => {
+  const loadSchedule = useCallback(async (date, doctorId) => {
     if (!date) return
     setLoading(true)
     try {
-      await ensureScheduleForDate(date)
-      const data = await getAppointmentsByDate(date)
+      await ensureScheduleForDate(date, doctorId)
+      const data = await getAppointmentsByDate(date, doctorId)
       setSlots(data)
     } catch (error) {
       console.error("Error loading schedule:", error)
@@ -32,14 +34,29 @@ export default function Appointment() {
     }
   }, [])
 
+  useEffect(() => {
+    async function fetchDefaultDoctor() {
+      try {
+        const doctors = await getDoctors()
+        if (doctors?.length > 0) {
+          setSelectedDoctor(doctors[0].id)
+        }
+      } catch (error) {
+        console.error("Error loading doctor info:", error)
+      }
+    }
+
+    fetchDefaultDoctor()
+  }, [])
+
   // Reload the schedule whenever the selected date changes.
   useEffect(() => {
     const loadTimer = setTimeout(() => {
-      loadSchedule(selectedDate)
+      loadSchedule(selectedDate, selectedDoctor || undefined)
     }, 0)
 
     return () => clearTimeout(loadTimer)
-  }, [loadSchedule, selectedDate])
+  }, [loadSchedule, selectedDate, selectedDoctor])
 
   // When a patient picks a new date, the effect above loads that date's schedule.
   function handleDateChange(e) {
