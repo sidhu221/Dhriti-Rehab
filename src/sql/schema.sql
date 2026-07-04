@@ -73,7 +73,8 @@ begin
     coalesce(new.raw_user_meta_data ->> 'last_name', ''),
     (new.raw_user_meta_data ->> 'dob')::date,
     new.email
-  );
+  )
+  on conflict (id) do nothing;
   return new;
 end;
 $$ language plpgsql security definer;
