@@ -6,7 +6,11 @@
       "Bash(node -e ' *)",
       "Bash(npx --yes playwright screenshot --full-page --wait-for-timeout 1500 http://localhost:5183/ 'C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\8222fd0e-0116-4368-86ee-9da05b6d3106\\\\scratchpad/homepage_full.png')",
       "Bash(npx --yes playwright install chromium)",
-      "Bash(npx --yes playwright screenshot --viewport-size=1400,900 --wait-for-timeout 1500 http://localhost:5183/ 'C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\8222fd0e-0116-4368-86ee-9da05b6d3106\\\\scratchpad/homepage_top.png')"
+      "Bash(npx --yes playwright screenshot --viewport-size=1400,900 --wait-for-timeout 1500 http://localhost:5183/ 'C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\8222fd0e-0116-4368-86ee-9da05b6d3106\\\\scratchpad/homepage_top.png')",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(npx --no-install playwright screenshot --wait-for-timeout 1200 --full-page \"http://localhost:5175/login\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\login2.png\")",
+      "Bash(npx --no-install playwright screenshot --wait-for-timeout 1200 --full-page \"http://localhost:5175/providers\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\providers2.png\")"
     ]
   }
 }

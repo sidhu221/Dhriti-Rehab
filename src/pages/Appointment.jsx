@@ -94,7 +94,7 @@ export default function Appointment() {
               <div
                 key={slot.id}
                 className={`timeslot ${slot.status === "booked" ? "occupied" : ""}`}
-                style={{ borderLeft: `6px solid ${slot.doctors?.color || "#4cb5ae"}` }}
+                style={{ borderLeft: `6px solid ${slot.doctors?.color || "#2e9e70"}` }}
                 onClick={() =>
                   slot.status !== "booked" &&
                   setSelectedSlot({

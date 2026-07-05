@@ -1,17 +1,18 @@
 .providers-page {
   padding: 60px 20px;
   text-align: center;
+  background: var(--color-bg);
 }
 
 .providers-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #0f3d3e;
+  color: var(--color-heading);
 }
 
 .providers-subtitle {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-text-muted);
   margin-bottom: 40px;
 }
 
@@ -23,16 +24,16 @@
 }
 
 .provider-card {
-  background: white;
+  background: var(--color-surface);
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(10, 38, 71, 0.08);
   transition: 0.2s ease;
 }
 
 .provider-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(10, 38, 71, 0.14);
 }
 
 .provider-img {
@@ -49,7 +50,7 @@
 }
 
 .provider-contact a {
-  color: #4cb5ae;
+  color: var(--color-green-700);
   font-weight: 600;
 }
 
@@ -57,21 +58,21 @@
 .provider-degree {
   text-align: left;
   font-size: 0.92rem;
-  color: #333;
+  color: var(--color-text);
   margin: 6px 0;
 }
 
 .provider-experience strong,
 .provider-degree strong,
 .provider-certs strong {
-  color: #0f3d3e;
+  color: var(--color-heading);
 }
 
 .provider-certs {
   text-align: left;
   margin-top: 12px;
   font-size: 0.92rem;
-  color: #333;
+  color: var(--color-text);
 }
 
 .provider-certs ul {

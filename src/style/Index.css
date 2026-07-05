@@ -1,4 +1,39 @@
 /* ----------------------------- */
+/* Design Tokens                 */
+/* ----------------------------- */
+
+:root {
+  /* Navy / Blue - structural / brand chrome */
+  --color-navy-900: #0a2647;
+  --color-navy-800: #123a63;
+  --color-navy-700: #1b4c82;
+  --color-heading: #1c4f85;
+  --color-navy-tint-bg: #e3edf9;
+  --color-navy-tint-border: #b9d0ea;
+
+  /* Green - primary interactive / trust color */
+  --color-green-800: #14503c;
+  --color-green-700: #1f7a5c;
+  --color-green-600: #2e9e70;
+  --color-green-500: #3cb37f;
+  --color-green-100: #e3f5ec;
+
+  /* Orange - conversion accent (booking actions only) */
+  --color-orange-700: #b85a17;
+  --color-orange-600: #d9701f;
+  --color-orange-500: #e8823b;
+  --color-orange-100: #fceadb;
+  --color-orange-800: #8f4713;
+
+  /* Neutrals */
+  --color-bg: #f5f8fb;
+  --color-surface: #ffffff;
+  --color-border: #e1e8f0;
+  --color-text: #24303d;
+  --color-text-muted: #55636f;
+}
+
+/* ----------------------------- */
 /* Global Reset + Base Styling   */
 /* ----------------------------- */
 
@@ -13,8 +48,8 @@ html, body {
   height: 100%;
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
-  background: #f8fafa;
-  color: #333;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 /* Remove default link styling */
@@ -33,4 +68,13 @@ img {
 .container {
   width: min(1200px, 90%);
   margin: 0 auto;
+}
+
+/* Accessible, on-brand focus state for every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-green-600);
+  outline-offset: 2px;
 }

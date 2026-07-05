@@ -12,10 +12,10 @@
 }
 
 .dashboard-slot {
-  background: white;
+  background: var(--color-surface);
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(10, 38, 71, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 .dashboard-slot.open button {
-  background: #4cb5ae;
+  background: var(--color-green-700);
   color: white;
 }
 

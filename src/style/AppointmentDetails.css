@@ -5,10 +5,10 @@
 }
 
 .details-card {
-  background: white;
+  background: var(--color-surface);
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(10, 38, 71, 0.1);
 }
 
 .details-form {
@@ -30,8 +30,15 @@
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #4cb5ae, #3aa59e);
+  background: linear-gradient(135deg, var(--color-orange-600), var(--color-orange-700));
   color: white;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.details-form button:hover,
+.details-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 112, 31, 0.3);
 }

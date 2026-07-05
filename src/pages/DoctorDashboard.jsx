@@ -79,7 +79,7 @@ export default function DoctorDashboard() {
             <div
               key={slot.id}
               className={`dashboard-slot ${slot.status}`}
-              style={{ borderLeft: `6px solid ${slot.doctors?.color || "#4cb5ae"}` }}
+              style={{ borderLeft: `6px solid ${slot.doctors?.color || "#2e9e70"}` }}
             >
               <div>
                 <strong>{slot.time}</strong> - {slot.doctors?.name || "Provider unavailable"}

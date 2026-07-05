@@ -6,9 +6,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f5fbf8 100%);
-  border-bottom: 1px solid rgba(15, 61, 62, 0.12);
-  box-shadow: 0 10px 30px rgba(15, 61, 62, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
+  border-bottom: 1px solid rgba(10, 38, 71, 0.12);
+  box-shadow: 0 10px 30px rgba(10, 38, 71, 0.08);
   font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
   position: sticky;
   top: 0;
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   flex: 0 0 auto;
-  color: #0f3d3e;
+  color: var(--color-heading);
   text-decoration: none;
   transition: transform 0.2s ease;
 }
@@ -39,7 +39,7 @@
   height: 76px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 6px 14px rgba(15, 61, 62, 0.18));
+  filter: drop-shadow(0 6px 14px rgba(10, 38, 71, 0.18));
 }
 
 .nav-links {
@@ -50,19 +50,36 @@
 }
 
 .nav-links a {
+  position: relative;
   text-decoration: none;
-  color: #284645;
+  color: var(--color-heading);
   font-size: 0.95rem;
   font-weight: 700;
   padding: 0.55rem 0;
-  border-bottom: 2px solid transparent;
-  transition: 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-orange-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #0b7f75;
-  border-bottom-color: #e8823b;
+  color: var(--color-green-700);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
 }
 
 .header-right {
@@ -73,30 +90,30 @@
 }
 
 .login-link {
-  color: #284645;
+  color: var(--color-heading);
   font-weight: 800;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .login-link:hover {
-  color: #0b7f75;
+  color: var(--color-green-700);
 }
 
 .header-right .appointment-btn {
   padding: 0.72rem 1.15rem;
-  background: linear-gradient(135deg, #0d5c58, #1c8fb5);
+  background: linear-gradient(135deg, var(--color-orange-600), var(--color-orange-700));
   color: white;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 800;
-  box-shadow: 0 8px 18px rgba(15, 109, 104, 0.22);
+  box-shadow: 0 8px 18px rgba(217, 112, 31, 0.28);
   transition: 0.2s ease;
 }
 
 .header-right .appointment-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(15, 109, 104, 0.28);
+  box-shadow: 0 12px 24px rgba(217, 112, 31, 0.34);
 }
 
 @media (max-width: 980px) {

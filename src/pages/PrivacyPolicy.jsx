@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
         <section className="privacy-policy-container">
           <div className="privacy-policy-header">
             <h1>Privacy Policy</h1>
-            <p>Initial draft for Dhriti Rehab Center. Last updated: June 25, 2026.</p>
+            <p>Last updated: June 25, 2026.</p>
           </div>
 
           <div className="privacy-policy-content">
@@ -92,11 +92,6 @@ export default function PrivacyPolicy() {
                 calling the clinic directly.
               </p>
             </section>
-
-            <p className="privacy-policy-note">
-              This draft is provided for website setup purposes and should be reviewed by
-              a qualified legal or compliance professional before publication.
-            </p>
           </div>
         </section>
       </main>

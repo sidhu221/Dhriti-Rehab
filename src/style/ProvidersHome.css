@@ -1,17 +1,17 @@
 .providers-home-section {
   padding: 80px 20px;
   text-align: center;
-  background: #f7f9f8;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-navy-tint-bg) 100%);
 }
 
 .providers-home-title {
   font-size: 2.4rem;
-  color: #0f3d3e;
+  color: var(--color-heading);
   margin-bottom: 10px;
 }
 
 .providers-home-subtitle {
-  color: #555;
+  color: var(--color-text-muted);
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.6;
@@ -29,8 +29,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  background: white;
+  box-shadow: 0 4px 14px rgba(10, 38, 71, 0.1);
+  background: var(--color-surface);
   transition: transform 0.2s ease;
 }
 
@@ -51,11 +51,11 @@
 .provider-info h3 {
   margin-bottom: 4px;
   font-size: 1.2rem;
-  color: #0f3d3e;
+  color: var(--color-heading);
 }
 
 .provider-info p {
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 0.95rem;
 }
 
@@ -63,7 +63,7 @@
 .provider-hover {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(10, 20, 33, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,8 +78,8 @@
 }
 
 .provider-btn {
-  background: white;
-  color: #1a1f1d;
+  background: linear-gradient(135deg, var(--color-navy-700), var(--color-navy-800));
+  color: white;
   padding: 10px 18px;
   border-radius: 8px;
   border: none;
@@ -90,7 +90,7 @@
 }
 
 .provider-btn.secondary {
-  background: #4cb5ae;
+  background: linear-gradient(135deg, var(--color-orange-600), var(--color-orange-700));
   color: white;
 }
 
@@ -101,7 +101,7 @@
 /* Load More Button */
 .load-more-btn {
   margin-top: 40px;
-  background: #4cb5ae;
+  background: var(--color-green-700);
   color: white;
   padding: 14px 26px;
   border-radius: 8px;
@@ -113,5 +113,6 @@
 }
 
 .load-more-btn:hover {
-  background: #3aa59e;
+  background: var(--color-green-800);
+  transform: translateY(-2px);
 }

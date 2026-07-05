@@ -1,6 +1,6 @@
 .telehealth-page {
   padding: 120px 20px 80px;
-  background: #f4faf9;
+  background: var(--color-bg);
 }
 
 /* MAIN LAYOUT */
@@ -22,21 +22,21 @@
 
 /* TOP BOX */
 .telehealth-box {
-  background: white;
+  background: var(--color-surface);
   padding: 35px;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 24px rgba(10, 38, 71, 0.08);
+  border: 1px solid var(--color-border);
 }
 
 .telehealth-box h1 {
   font-size: 2.2rem;
-  color: #0f3d3e;
+  color: var(--color-heading);
   margin-bottom: 15px;
 }
 
 .telehealth-box p {
-  color: #555;
+  color: var(--color-text-muted);
   line-height: 1.7;
 }
 
@@ -44,7 +44,7 @@
 .schedule-btn {
   margin-top: 20px;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #4cb5ae, #3aa59e);
+  background: linear-gradient(135deg, var(--color-orange-600), var(--color-orange-700));
   color: white;
   border: none;
   border-radius: 10px;
@@ -55,21 +55,20 @@
 }
 
 .schedule-btn:hover {
-  background: linear-gradient(135deg, #3aa59e, #2f8f88);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 20px rgba(217, 112, 31, 0.3);
 }
 
 /* COLORED SECTION */
 .colored-section {
-  background: #e8f3f1;
+  background: var(--color-navy-tint-bg);
   padding: 25px;
   border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(10, 38, 71, 0.06);
 }
 
 .colored-section h2 {
-  color: #0f3d3e;
+  color: var(--color-heading);
   margin-bottom: 10px;
 }
 
@@ -81,26 +80,26 @@
 }
 
 .telehealth-card {
-  background: white;
+  background: var(--color-surface);
   padding: 25px;
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 20px rgba(10, 38, 71, 0.08);
+  border: 1px solid var(--color-border);
 }
 
 .telehealth-card h3 {
   margin-bottom: 12px;
-  color: #0f3d3e;
+  color: var(--color-heading);
 }
 
 .telehealth-card ul {
   padding-left: 18px;
-  color: #444;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
 .telehealth-card p {
-  color: #444;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -108,9 +107,9 @@
 .telehealth-image-placeholder {
   width: 100%;
   height: 320px;
-  background: linear-gradient(135deg, #d9ece9, #c7e4df);
+  background: linear-gradient(135deg, var(--color-green-100), var(--color-navy-tint-bg));
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(10, 38, 71, 0.08);
 }
 
 /* RESPONSIVE */

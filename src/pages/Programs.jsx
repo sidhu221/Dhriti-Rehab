@@ -25,7 +25,7 @@ export default function GeneralPrograms() {
               individuals build emotional resilience and long‑term stability.
             </p>
 
-            <p>
+            <p className="program-intro">
               Our team of mental‑health professionals — including psychiatrists, therapists,
               and counselors — work together to create personalized treatment plans that
               support each person’s unique needs. Whether you’re seeking help for stress,
@@ -38,9 +38,9 @@ export default function GeneralPrograms() {
               Contact our team at{" "}
               <a
                 href="tel:9876543210"
-                style={{ color: "#4cb5ae", textDecoration: "none" }}
+                style={{ color: "#1f7a5c", textDecoration: "none" }}
               >
-                987‑654‑3210
+                +91 7013708265
               </a>{" "}
               to learn more about our services and how we can support your mental‑health journey.
             </p>

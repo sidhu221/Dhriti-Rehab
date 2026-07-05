@@ -45,9 +45,6 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p>&copy; 2026 Dhriti Rehab Center. All rights reserved.</p>
-        <p className="crisis">
-          In the event of an emergency, call 112 for support anytime.
-        </p>
       </div>
     </footer>
   )

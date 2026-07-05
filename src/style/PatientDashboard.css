@@ -1,5 +1,5 @@
 .patient-dashboard-page {
-  background: #f7f9f8;
+  background: var(--color-bg);
   padding: 120px 20px 80px;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .patient-dashboard-kicker {
-  color: #0b7f75;
+  color: var(--color-green-700);
   font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -22,14 +22,14 @@
 }
 
 .patient-dashboard-hero h1 {
-  color: #0f3d3e;
+  color: var(--color-heading);
   font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 10px;
 }
 
 .patient-dashboard-hero p {
-  color: #536764;
+  color: var(--color-text-muted);
   line-height: 1.65;
   max-width: 680px;
 }
@@ -38,7 +38,7 @@
 .patient-dashboard-action {
   border: none;
   border-radius: 8px;
-  background: #0f6d68;
+  background: var(--color-green-700);
   color: white;
   cursor: pointer;
   display: inline-flex;
@@ -46,6 +46,12 @@
   justify-content: center;
   padding: 0.8rem 1rem;
   text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.patient-dashboard-signout:hover,
+.patient-dashboard-action:hover {
+  background: var(--color-green-800);
 }
 
 .patient-dashboard-grid {
@@ -57,15 +63,15 @@
 }
 
 .patient-dashboard-card {
-  background: white;
-  border: 1px solid rgba(15, 61, 62, 0.12);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  box-shadow: 0 8px 26px rgba(15, 61, 62, 0.08);
+  box-shadow: 0 8px 26px rgba(10, 38, 71, 0.08);
   padding: 28px;
 }
 
 .patient-dashboard-card h2 {
-  color: #0f3d3e;
+  color: var(--color-heading);
   font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
   font-size: 1.25rem;
   margin-bottom: 18px;
@@ -77,13 +83,13 @@
 }
 
 .profile-card dt {
-  color: #6b7b78;
+  color: var(--color-text-muted);
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .profile-card dd {
-  color: #203a39;
+  color: var(--color-heading);
   font-weight: 700;
 }
 
@@ -94,14 +100,14 @@
 }
 
 .appointment-summary strong {
-  color: #0f3d3e;
+  color: var(--color-heading);
   font-size: 1.5rem;
 }
 
 .appointment-summary span,
 .appointment-summary p,
 .patient-dashboard-card p {
-  color: #536764;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -114,23 +120,23 @@
 }
 
 .appointments-card li {
-  border-bottom: 1px solid #e5eeeb;
+  border-bottom: 1px solid var(--color-border);
   display: grid;
   gap: 4px;
   padding-bottom: 12px;
 }
 
 .appointments-card span {
-  color: #6b7b78;
+  color: var(--color-text-muted);
   font-weight: 700;
 }
 
 .appointments-card strong {
-  color: #0f3d3e;
+  color: var(--color-heading);
 }
 
 .appointments-card em {
-  color: #536764;
+  color: var(--color-text-muted);
   font-style: normal;
 }
 
@@ -140,12 +146,17 @@
 }
 
 .patient-dashboard-actions a {
-  border: 1px solid rgba(15, 61, 62, 0.16);
+  border: 1px solid var(--color-navy-tint-border);
   border-radius: 8px;
-  color: #0f6d68;
+  color: var(--color-green-700);
   font-weight: 800;
   padding: 12px;
   text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.patient-dashboard-actions a:hover {
+  background: var(--color-navy-tint-bg);
 }
 
 .patient-dashboard-status,
