@@ -1,16 +1,144 @@
-# React + Vite
+# Dhriti Rehab Center — Website & Patient Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full website and appointment-booking system built for **Dhriti (Mind Clinic and Counseling Center)**, a real de-addiction and mental wellness clinic in Hyderabad, India. The project covers everything from the public marketing site down to a live database-backed booking flow and an authenticated patient portal.
 
-Currently, two official plugins are available:
+**Live demo:** [add your deployed link here if you have one]
+**Repo:** https://github.com/sidhu221/Dhriti-Rehab
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Why I Built This
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<!--
+This is your section to fill in — an admissions officer or interviewer will
+read this first, so make it personal. A few prompts to help you write it:
 
-## Expanding the ESLint configuration
+- How did you connect with this clinic, and what did they actually need
+  before you got involved (no website? an outdated one? no online booking?)
+- What was the real-world problem you were solving for them — patients
+  calling in to book, no way to browse programs online, no easy way for
+  staff to see the day's schedule?
+- What did you want to learn or prove to yourself by taking this on?
+- Any feedback from the clinic once they saw it, or how it's actually
+  being used today?
+-->
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I built this website for **[clinic name / contact, if you want to name them]**, a de-addiction and mental wellness clinic in Hyderabad, to give them a professional online presence and a real appointment-booking system in place of [phone-only booking / no website / etc.]. My goal was to [describe the concrete problem you set out to solve], and along the way to practice building a production-style full-stack application end to end — from database design to authentication to a deployed, real-world product a small business could actually use.
+
+---
+
+## What This Project Demonstrates
+
+- **Full-stack web development**: a React single-page app on the frontend backed by a real Postgres database (Supabase) on the backend, not just static pages.
+- **Database design**: designing a normalized schema (doctors, patients, appointments, patient profiles) with foreign keys, indexes, triggers, and row-level security policies rather than hardcoded data.
+- **Authentication**: real email/password auth with Supabase Auth, protected routes, and a session-aware patient dashboard.
+- **A complete booking workflow**: date/time slot selection, availability generation, booking confirmation, and a patient-facing dashboard to view upcoming appointments — the same core flow used by real scheduling products.
+- **Design systems thinking**: a hand-built, documented color and component system (see [Design System](#design-system)) rather than a default template look.
+- **Working with a real, non-technical stakeholder**: translating a small business's actual needs (programs offered, provider bios, clinic hours, location) into a working product.
+
+---
+
+## Features
+
+- **Marketing site** — home page, about page, and five individual treatment program pages (Alcohol De-Addiction, Drug De-Addiction, Adult Psychiatry, Psychological Services, Detox & Stabilization), each with its own content, a provider-facing "sidebar" for cross-navigation, and dedicated dos/don'ts and emergency-contact sections.
+- **Provider & telehealth pages** — provider bios with credentials/certifications, and a telehealth information page.
+- **Appointment booking** — a real calendar/slot picker backed by the database: pick a date, see live availability per doctor, pick an open slot, and confirm booking with contact details.
+- **Patient accounts** — sign up, log in, reset password (via Supabase Auth), and a patient dashboard showing profile info and upcoming/past appointments.
+- **Staff scheduling view** — a doctor-facing dashboard to see and toggle a day's appointment slots between open/booked.
+- **Contact & location** — clinic address, phone, embedded map, and a contact form.
+- **Responsive design** — layouts adapt down to mobile breakpoints across every page.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend framework | React 19 + React Router 7 |
+| Build tool | Vite 8 |
+| Backend / database | Supabase (PostgreSQL, Auth, Row-Level Security) |
+| Styling | Hand-written CSS with a shared design-token system (no framework) |
+| Linting | ESLint 10 |
+
+No CSS framework, no component library, and no state-management library were used — layout, styling, and data flow are all hand-built, which was a deliberate choice to actually learn the fundamentals rather than lean on abstractions.
+
+---
+
+## Architecture
+
+### Routing
+
+A single React Router route table (`src/App.jsx`) drives every page — public marketing pages, auth pages (`/login`, `/signup`, `/forgot-password`), the booking flow (`/appointment`, `/appointment/:id`), and the two dashboards (`/patient-dashboard`, `/doctor-dashboard`).
+
+### Database schema
+
+Four tables in Supabase Postgres:
+
+- **`doctors`** — provider records (name, phone, an accent color used in the UI).
+- **`patients`** — created at booking time (name, phone, email).
+- **`appointments`** — one row per bookable slot (doctor, date, time, status: `open`/`booked`), linked to a patient once booked.
+- **`patient_profiles`** — the authenticated account record, keyed to the Supabase Auth user ID, auto-created via a database trigger the moment someone signs up.
+
+Row-Level Security policies restrict `patient_profiles` so a signed-in user can only read/write their own row. A Postgres RPC (`patient_email_exists`) lets the password-reset flow check whether an email is registered without ever exposing user rows to the client.
+
+### Booking flow
+
+1. Patient opens `/appointment` and picks a date.
+2. If no schedule exists yet for that date, the app auto-generates a fixed grid of slots per doctor.
+3. Patient picks an open slot → a modal confirms the choice → continues to `/appointment/:id`.
+4. Patient enters their details, which creates a patient record and marks the slot `booked`.
+5. A signed-in patient can see their appointments reflected on `/patient-dashboard`.
+
+### Design System
+
+The site uses a deliberate three-color palette — **navy** for structure/headings, **green** for general actions and links, and **orange** reserved specifically for booking/scheduling calls-to-action — defined as CSS custom properties in `src/style/Index.css` and reused across all 26 stylesheets. This was iterated on specifically for accessibility (WCAG contrast) and to make color communicate meaning (e.g., "orange button" always means "this books an appointment") rather than being purely decorative.
+
+---
+
+## Project Structure
+
+```
+src/
+├── pages/          # One component per route (Home, Programs, Appointment, Dashboards, etc.)
+├── components/      # Shared building blocks (Header, Footer, Hero, homepage sections)
+├── api/              # Supabase data-access functions (doctors, patients, appointments, auth)
+├── lib/               # Supabase client setup
+├── style/            # Per-page/component CSS + the shared design-token system
+└── sql/               # Database schema (schema.sql) and seed data
+```
+
+---
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+You'll need a Supabase project and a `.env` file with:
+
+```
+VITE_SUPABASE_URL=your-project-url
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+Run `src/sql/schema.sql` against your Supabase project to create the tables, triggers, and RLS policies.
+
+---
+
+## Known Limitations & Next Steps
+
+Being upfront about what's incomplete, since this is a real project I'm still iterating on:
+
+- **`/doctor-dashboard` has no authentication guard yet** — it's reachable by anyone who knows the URL. The next step is adding a staff login separate from the patient auth system.
+- **Row-Level Security is only enforced on `patient_profiles`** — `doctors`, `patients`, and `appointments` should get equivalent policies before this is treated as production-hardened.
+- **Provider photos are placeholders** — real headshots need to be swapped in.
+- **Telehealth page is informational only** — there's no real video-call integration yet.
+- **`src/sql/seed.sql` is a partial sample**, not a full runnable seed script.
+
+---
+
+## Acknowledgments
+
+Built for and with input from the team at Dhriti (Mind Clinic and Counseling Center), Hyderabad.
