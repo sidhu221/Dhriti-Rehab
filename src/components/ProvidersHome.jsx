@@ -6,18 +6,18 @@ export default function ProvidersHome() {
 
   const providers = [
     {
-      name: "Dr. Aris Thorne",
-      title: "Clinical Psychologist, PsyD",
+      name: "Dr. K.B Nihal",
+      title: "Consultant Psychiatrist",
       img: "https://via.placeholder.com/400x450?text=Provider+1"
     },
     {
-      name: "Marcus Chen, LCSW",
-      title: "Lead Recovery Specialist",
+      name: "Ms. Gowthami Soudamini",
+      title: "Clinical Psychologist",
       img: "https://via.placeholder.com/400x450?text=Provider+2"
     },
     {
-      name: "Dr. Lena Varkas",
-      title: "Medical Director, MD",
+      name: "Dr. Sugunakar Reddy Kotha",
+      title: "Consultant Physician and Diabetologist",
       img: "https://via.placeholder.com/400x450?text=Provider+3"
     }
   ]
@@ -59,13 +59,6 @@ export default function ProvidersHome() {
           </div>
         ))}
       </div>
-
-      <button
-        className="load-more-btn"
-        onClick={() => navigate("/providers")}
-      >
-        Load More Providers
-      </button>
     </section>
   )
 }

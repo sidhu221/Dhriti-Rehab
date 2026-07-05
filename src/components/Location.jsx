@@ -14,12 +14,13 @@ export default function Location() {
 
           <div className="info-block">
             <h3>Visit Us</h3>
-            <p>42 Tranquil Way<br />Hyderbad, India</p>
+            <p>10-15/51/NR, Main Road, near SILVER OAK VILLAS, Officers Colony, Cherlapalli, Hyderabad, Secunderabad, Telangana 500051 
+            <br /><strong><em>Landmark: Near Silver Oak Villas</em></strong></p>
           </div>
 
           <div className="info-block">
             <h3>Call</h3>
-            <p>(800) 555‑HOPE</p>
+            <p>+91 7013708265</p>
           </div>
 
           <div className="info-block">
@@ -30,10 +31,14 @@ export default function Location() {
           {/* GOOGLE MAP EMBED */}
           <div className="map-container">
             <iframe
-              title="Dhriti RehabCenter Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.497783359934!2d-119.247053!3d34.448049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e9b7c0e4b7d8c7%3A0x8e8b9f4d3e2c4c0!2sOjai%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
-              loading="lazy"
+              title="Dhriti Rehab Center Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.8193953832897!2d78.60275479199866!3d17.4683562646611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9dd6b3ff8351%3A0xf60affbcefcabf40!2sDHRITI%20(Mind%20Clinic%20And%20Counseling%20Center)!5e0!3m2!1sen!2sin!4v1783237468969!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
               allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
         </div>

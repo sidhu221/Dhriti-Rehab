@@ -9,13 +9,9 @@ export default function Footer() {
           <Link to="/" className="footer-logo" aria-label="Dhriti Rehab Center home">
             <img
               className="footer-logo-image"
-              src="/dhriti-logo.svg"
-              alt="Dhriti Rehab Center"
+              src="/dhriti-logo-full.png"
+              alt="Dhriti Rehab Center - Resilience & Recovery"
             />
-            <div>
-              <h2>Dhriti Rehab Center</h2>
-              <span>Healing | Support | Recovery</span>
-            </div>
           </Link>
 
           <p>

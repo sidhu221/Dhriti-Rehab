@@ -5,33 +5,29 @@ import Footer from "../components/Footer"
 export default function Providers() {
   const providers = [
     {
-      name: "Dr. Aisha Verma",
+      name: "Dr. K.B Nihal",
+      role: "Consultant Psychiatrist",
+      img: "https://via.placeholder.com/150",
+      experience: "14 years",
+      degree: "MBBS, MD (Psychiatry), FIPS",
+      cert_awards: "1. Certification in Diabetes and Metabolic Disorders, 2. Fellowship in Sexology, 3. Accredited in Professional Counselling Diploma for Sexual Abuse", 
+    },
+    {
+      name: "Ms. Gowthami Soudamini",
       role: "Clinical Psychologist",
       img: "https://via.placeholder.com/150",
-      email: "aisha.verma@example.com",
-      phone: "(555) 123‑4567"
+      experience: "5 years",
+      degree: "M.A, MPHIL",
+      cert_awards: "1. Interpersonal Psychotherapy (IPT) Certification at University of Toronto, 2. Interpersonal and Social Rythm Therapy, 3. Teacher Social and Emotional Learning Certification",
     },
     {
-      name: "Dr. Michael Chen",
-      role: "Psychiatrist",
+      name: "Dr. Sugunakar Reddy Kotha",
+      role: "Consultant Physician and Diabetologist",
       img: "https://via.placeholder.com/150",
-      email: "michael.chen@example.com",
-      phone: "(555) 987‑6543"
+      experience: "8+ years",
+      degree: "MBBS, MD, PGDHHM",
+      cert_awards: "1. Fellowship in Diabetology, 2. Awarded Best Reporter of Adverse Drug Reactions"
     },
-    {
-      name: "Dr. Sofia Martinez",
-      role: "Family Therapist",
-      img: "https://via.placeholder.com/150",
-      email: "sofia.martinez@example.com",
-      phone: "(555) 222‑8899"
-    },
-    {
-      name: "Dr. Liam Patel",
-      role: "Addiction Specialist",
-      img: "https://via.placeholder.com/150",
-      email: "liam.patel@example.com",
-      phone: "(555) 444‑7788"
-    }
   ]
 
   return (
@@ -48,10 +44,20 @@ export default function Providers() {
 
                       <h2>{p.name}</h2>
                       <h4>{p.role}</h4>
+                      <p className="provider-experience"><strong>Experience:</strong> {p.experience}</p>
+                      <p className="provider-degree"><strong>Qualifications:</strong> {p.degree}</p>
 
-                      <div className="provider-contact">
-                          <p>Email: <a href={`mailto:${p.email}`}>{p.email}</a></p>
-                          <p>Phone: {p.phone}</p>
+                      <div className="provider-certs">
+                          <strong>Certifications &amp; Awards</strong>
+                          <ul>
+                              {p.cert_awards
+                                  .split(/\d+\.\s*/)
+                                  .map((item) => item.replace(/,\s*$/, "").trim())
+                                  .filter(Boolean)
+                                  .map((item, i) => (
+                                      <li key={i}>{item}</li>
+                                  ))}
+                          </ul>
                       </div>
                   </div>
               ))}

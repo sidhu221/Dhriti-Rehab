@@ -8,13 +8,9 @@ export default function Header() {
         <Link to="/" className="logo" aria-label="Dhriti Rehab Center home">
           <img
             className="logo-image"
-            src="/dhriti-logo.svg"
-            alt="Dhriti Rehab Center"
+            src="/dhriti-logo-full.png"
+            alt="Dhriti Rehab Center - Resilience & Recovery"
           />
-          <div className="logo-text">
-            <h2>Dhriti</h2>
-            <span>Rehab Center</span>
-          </div>
         </Link>
 
         <nav className="nav-links" aria-label="Primary navigation">
