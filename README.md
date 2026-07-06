@@ -1,6 +1,6 @@
 # Dhriti Rehab Center — Website & Patient Portal
 
-A full website and appointment-booking system built for **Dhriti (Mind Clinic and Counseling Center)**, a real de-addiction and mental wellness clinic in Hyderabad, India. The project covers everything from the public marketing site down to a live database-backed booking flow and an authenticated patient portal.
+A full website and appointment-booking system built for **Dhriti (Mind Clinic and Counseling Center)**, a de-addiction and mental wellness clinic in Hyderabad, India.
 
 **Live demo:** [add your deployed link here if you have one]
 **Repo:** https://github.com/sidhu221/Dhriti-Rehab
@@ -23,24 +23,23 @@ read this first, so make it personal. A few prompts to help you write it:
   being used today?
 -->
 
-I built this website for **[clinic name / contact, if you want to name them]**, a de-addiction and mental wellness clinic in Hyderabad, to give them a professional online presence and a real appointment-booking system in place of [phone-only booking / no website / etc.]. My goal was to [describe the concrete problem you set out to solve], and along the way to practice building a production-style full-stack application end to end — from database design to authentication to a deployed, real-world product a small business could actually use.
+I built this website for **Dr. K.B Nihal and Dhriti Rehab Center**, a de-addiction and mental wellness clinic in Hyderabad, to give them a professional online presence and booking system to help users interact better with the clinic. My goal was to create their first website which lists out the progams offered, a patient portal to view bookings, and a system for users to book appointments with the consult psychiatrist.
 
 ---
 
 ## What This Project Demonstrates
 
-- **Full-stack web development**: a React single-page app on the frontend backed by a real Postgres database (Supabase) on the backend, not just static pages.
+- **Full-stack web development**: a React single-page app on the frontend backed by a Postgres database (Supabase) on the backend
 - **Database design**: designing a normalized schema (doctors, patients, appointments, patient profiles) with foreign keys, indexes, triggers, and row-level security policies rather than hardcoded data.
-- **Authentication**: real email/password auth with Supabase Auth, protected routes, and a session-aware patient dashboard.
-- **A complete booking workflow**: date/time slot selection, availability generation, booking confirmation, and a patient-facing dashboard to view upcoming appointments — the same core flow used by real scheduling products.
-- **Design systems thinking**: a hand-built, documented color and component system (see [Design System](#design-system)) rather than a default template look.
-- **Working with a real, non-technical stakeholder**: translating a small business's actual needs (programs offered, provider bios, clinic hours, location) into a working product.
+- **Authentication**: email/password auth with Supabase Auth, protected routes, and a session-aware patient dashboard.
+- **A complete booking workflow**: date/time slot selection, availability generation, booking confirmation, and a patient-facing dashboard to view upcoming appointments
+- **Working with real businesses**: translating a small business's actual needs (programs offered, provider bios, clinic hours, location) into a working product.
 
 ---
 
 ## Features
 
-- **Marketing site** — home page, about page, and five individual treatment program pages (Alcohol De-Addiction, Drug De-Addiction, Adult Psychiatry, Psychological Services, Detox & Stabilization), each with its own content, a provider-facing "sidebar" for cross-navigation, and dedicated dos/don'ts and emergency-contact sections.
+- **Marketing site** — home page, about page, and five individual treatment program pages (Alcohol De-Addiction, Drug De-Addiction, Adult Psychiatry, Psychological Services, Detox & Stabilization), each with its own content, a provider-facing "sidebar" for cross-navigation, and dedicated dos/don'ts.
 - **Provider & telehealth pages** — provider bios with credentials/certifications, and a telehealth information page.
 - **Appointment booking** — a real calendar/slot picker backed by the database: pick a date, see live availability per doctor, pick an open slot, and confirm booking with contact details.
 - **Patient accounts** — sign up, log in, reset password (via Supabase Auth), and a patient dashboard showing profile info and upcoming/past appointments.
@@ -79,7 +78,7 @@ Four tables in Supabase Postgres:
 - **`appointments`** — one row per bookable slot (doctor, date, time, status: `open`/`booked`), linked to a patient once booked.
 - **`patient_profiles`** — the authenticated account record, keyed to the Supabase Auth user ID, auto-created via a database trigger the moment someone signs up.
 
-Row-Level Security policies restrict `patient_profiles` so a signed-in user can only read/write their own row. A Postgres RPC (`patient_email_exists`) lets the password-reset flow check whether an email is registered without ever exposing user rows to the client.
+Row-Level Security policies restrict `patient_profiles` so a signed-in user can only read/write their own row. A Postgres RPC (`patient_email_exists`) lets the password-reset flow check whether an email is registered without ever exposing user rows to the client. Other similar RLS policies were used for other tables.
 
 ### Booking flow
 
@@ -109,7 +108,7 @@ src/
 
 ---
 
-## Running Locally
+## To Run this Locally
 
 ```bash
 npm install
@@ -131,14 +130,13 @@ Run `src/sql/schema.sql` against your Supabase project to create the tables, tri
 
 Being upfront about what's incomplete, since this is a real project I'm still iterating on:
 
-- **`/doctor-dashboard` has no authentication guard yet** — it's reachable by anyone who knows the URL. The next step is adding a staff login separate from the patient auth system.
-- **Row-Level Security is only enforced on `patient_profiles`** — `doctors`, `patients`, and `appointments` should get equivalent policies before this is treated as production-hardened.
-- **Provider photos are placeholders** — real headshots need to be swapped in.
+- **`/doctor-dashboard` has no authentication yet** — The next step is adding a staff login separate from the patient auth system.
 - **Telehealth page is informational only** — there's no real video-call integration yet.
-- **`src/sql/seed.sql` is a partial sample**, not a full runnable seed script.
 
 ---
 
 ## Acknowledgments
 
 Built for and with input from the team at Dhriti (Mind Clinic and Counseling Center), Hyderabad.
+
+Thanks to Dr. K.B Nihal for providing gallery images for the clinic to use on the website.
