@@ -28,7 +28,7 @@ export default function Contact() {
               </p>
               <br></br>
               <p><strong>Email:</strong><br />
-                contact@yourclinic.com
+                dhritimind_1798@dhritimind.com
               </p>
             </div>
           </div>

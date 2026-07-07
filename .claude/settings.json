@@ -10,7 +10,10 @@
       "Skill(run)",
       "Skill(run:*)",
       "Bash(npx --no-install playwright screenshot --wait-for-timeout 1200 --full-page \"http://localhost:5175/login\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\login2.png\")",
-      "Bash(npx --no-install playwright screenshot --wait-for-timeout 1200 --full-page \"http://localhost:5175/providers\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\providers2.png\")"
+      "Bash(npx --no-install playwright screenshot --wait-for-timeout 1200 --full-page \"http://localhost:5175/providers\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\providers2.png\")",
+      "Bash(netstat -ano)",
+      "Bash(npx --no-install playwright screenshot --wait-for-timeout 1500 \"http://localhost:5175/appointment\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\appt-weekday.png\")",
+      "Bash(npx --no-install playwright screenshot --wait-for-timeout 4000 --full-page \"http://localhost:5175/appointment\" \"C:\\\\Users\\\\sidhu\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sidhu-OneDrive-Dhriti-Rehab\\\\44b09e38-18ae-43a6-9427-d3b3f2fb109d\\\\scratchpad\\\\screenshots\\\\appt-sorted.png\")"
     ]
   }
 }

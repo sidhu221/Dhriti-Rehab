@@ -8,17 +8,17 @@ export default function ProvidersHome() {
     {
       name: "Dr. K.B Nihal",
       title: "Consultant Psychiatrist",
-      img: "https://via.placeholder.com/400x450?text=Provider+1"
+      img: "/dr.nihal.jpeg"
     },
     {
       name: "Ms. Gowthami Soudamini",
       title: "Clinical Psychologist",
-      img: "https://via.placeholder.com/400x450?text=Provider+2"
+      img: "/ms.gowthami.jpeg"
     },
     {
       name: "Dr. Sugunakar Reddy Kotha",
       title: "Consultant Physician and Diabetologist",
-      img: "https://via.placeholder.com/400x450?text=Provider+3"
+      img: "/dr.sugunakar.jpeg"
     }
   ]
 

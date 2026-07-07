@@ -35,6 +35,13 @@ create table public.appointments (
 create index on public.appointments (date);
 create index on public.appointments (doctor_id, date);
 
+-- Prevents the same doctor from ever getting two slots at the same date/time —
+-- this is what makes createDefaultScheduleForDate's upsert safe against the
+-- race where a page load fires the "create default schedule" call twice
+-- before the first insert lands.
+alter table public.appointments
+add constraint appointments_doctor_date_time_unique unique (doctor_id, date, time);
+
 -- PATIENT PROFILES TABLE
 -- Stores patient account details from the signup form.
 -- Passwords are intentionally not stored here; Supabase Auth stores password hashes.

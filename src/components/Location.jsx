@@ -25,7 +25,7 @@ export default function Location() {
 
           <div className="info-block">
             <h3>Email</h3>
-            <p>care@dhritirehab.org</p>
+            <p>dhritimind_1798@dhritimind.com</p>
           </div>
 
           {/* GOOGLE MAP EMBED */}
@@ -57,7 +57,7 @@ export default function Location() {
 
           <label>
             Phone (optional)
-            <input type="text" placeholder="(555) 234‑5678" />
+            <input type="text" placeholder="+91 1111111111" />
           </label>
 
           <label>

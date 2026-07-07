@@ -41,7 +41,7 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
 }
 
 .provider-contact p {

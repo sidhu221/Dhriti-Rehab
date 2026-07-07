@@ -7,7 +7,7 @@ export default function Providers() {
     {
       name: "Dr. K.B Nihal",
       role: "Consultant Psychiatrist",
-      img: "https://via.placeholder.com/150",
+      img: "/dr.nihal.jpeg",
       experience: "14 years",
       degree: "MBBS, MD (Psychiatry), FIPS",
       cert_awards: "1. Certification in Diabetes and Metabolic Disorders, 2. Fellowship in Sexology, 3. Accredited in Professional Counselling Diploma for Sexual Abuse", 
@@ -15,7 +15,7 @@ export default function Providers() {
     {
       name: "Ms. Gowthami Soudamini",
       role: "Clinical Psychologist",
-      img: "https://via.placeholder.com/150",
+      img: "/ms.gowthami.jpeg",
       experience: "5 years",
       degree: "M.A, MPHIL",
       cert_awards: "1. Interpersonal Psychotherapy (IPT) Certification at University of Toronto, 2. Interpersonal and Social Rythm Therapy, 3. Teacher Social and Emotional Learning Certification",
@@ -23,7 +23,7 @@ export default function Providers() {
     {
       name: "Dr. Sugunakar Reddy Kotha",
       role: "Consultant Physician and Diabetologist",
-      img: "https://via.placeholder.com/150",
+      img: "/dr.sugunakar.jpeg",
       experience: "8+ years",
       degree: "MBBS, MD, PGDHHM",
       cert_awards: "1. Fellowship in Diabetology, 2. Awarded Best Reporter of Adverse Drug Reactions"

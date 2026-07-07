@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { useCallback, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getAppointmentsByDate, ensureScheduleForDate } from "../api/appointments"
+import { getAppointmentsByDate, ensureScheduleForDate, isWeekday } from "../api/appointments"
 import { getDoctors } from "../api/doctors"
 
 function getTodayDate() {
@@ -50,13 +50,18 @@ export default function Appointment() {
   }, [])
 
   // Reload the schedule whenever the selected date changes.
+  // Intentionally not depending on selectedDoctor: getAppointmentsByDate/
+  // ensureScheduleForDate don't filter by doctor, so including it here just
+  // caused this effect to fire a second time the moment the default doctor
+  // finished loading — racing two concurrent ensureScheduleForDate calls for
+  // the same date and creating duplicate slots.
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       loadSchedule(selectedDate, selectedDoctor || undefined)
     }, 0)
 
     return () => clearTimeout(loadTimer)
-  }, [loadSchedule, selectedDate, selectedDoctor])
+  }, [loadSchedule, selectedDate])
 
   // When a patient picks a new date, the effect above loads that date's schedule.
   function handleDateChange(e) {
@@ -85,7 +90,14 @@ export default function Appointment() {
 
           {loading && <p>Loading schedule...</p>}
 
-          {!loading && slots.length === 0 && (
+          {!loading && !isWeekday(selectedDate) && (
+            <p>
+              We don't offer appointments on weekends. Please call{" "}
+              <a href="tel:+917013708265">+91 7013708265</a> to schedule.
+            </p>
+          )}
+
+          {!loading && isWeekday(selectedDate) && slots.length === 0 && (
             <p>No schedule available for this date.</p>
           )}
 
