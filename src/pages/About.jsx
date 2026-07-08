@@ -44,7 +44,10 @@ export default function About() {
           {/* RIGHT SIDE — IMAGE */}
           <div className="about-right">
             <div className="about-image-placeholder">
-              {/* Insert your image here */}
+              <img
+                src="/dhriti-logo-full.png"
+                alt="Clinic Logo"
+              />
             </div>
           </div>
 

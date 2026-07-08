@@ -76,7 +76,7 @@ export async function ensureScheduleForDate(date) {
 }
 
 // Books a slot by first creating a patient row, then linking that patient to the appointment.
-export async function bookAppointment({ appointmentId, patient }) {
+export async function bookAppointment({ appointmentId, patient, appointmentType }) {
   const { data: patientData, error: patientError } = await supabase
     .from("patients")
     .insert({
@@ -91,7 +91,11 @@ export async function bookAppointment({ appointmentId, patient }) {
 
   const { data, error } = await supabase
     .from("appointments")
-    .update({ status: "booked", patient_id: patientData.id })
+    .update({
+      status: "booked",
+      patient_id: patientData.id,
+      appointment_type: appointmentType || "in-person"
+    })
     .eq("id", appointmentId)
     .select("*, doctors(*), patients(*)")
     .single()

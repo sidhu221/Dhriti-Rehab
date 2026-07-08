@@ -27,6 +27,30 @@ h1 {
   border: 1px solid #ccc;
 }
 
+/* APPOINTMENT TYPE */
+.appointment-type-toggle {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0 25px;
+}
+
+.type-option {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: var(--color-surface);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.type-option.active {
+  background: linear-gradient(135deg, var(--color-orange-600), var(--color-orange-700));
+  color: white;
+  border-color: transparent;
+}
+
 /* TIME SLOTS */
 .timeslot-container h2 {
   margin-bottom: 15px;

@@ -28,6 +28,8 @@ create table public.appointments (
   time text not null,
   status text not null default 'open',
   patient_id uuid references public.patients(id),
+  appointment_type text not null default 'in-person'
+    check (appointment_type in ('in-person', 'telehealth')),
   created_at timestamp with time zone default now()
 );
 

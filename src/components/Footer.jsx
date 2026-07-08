@@ -36,6 +36,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/providers">Our Providers</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/telehealth">Telehealth</Link></li>
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/login">Patient Portal</Link></li>

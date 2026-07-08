@@ -72,7 +72,11 @@ export default function Telehealth() {
 
           {/* RIGHT SIDE IMAGE */}
           <div className="telehealth-right">
-            <div className="telehealth-image-placeholder"></div>
+            <img
+              className="telehealth-image"
+              src="/telehealth-cartoon.png"
+              alt="Telehealth Services"
+            />
           </div>
 
         </div>

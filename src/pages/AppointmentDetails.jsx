@@ -39,7 +39,8 @@ export default function AppointmentDetails() {
     try {
       const data = await bookAppointment({
         appointmentId: slot.id,
-        patient: form
+        patient: form,
+        appointmentType: slot.appointmentType
       })
       setConfirmed(data)
     } catch (err) {
@@ -60,7 +61,8 @@ export default function AppointmentDetails() {
             <p>
               <strong>Doctor:</strong> {slot.doctor?.name || "Dr. Dhriti"}<br />
               <strong>Date:</strong> {slot.date}<br />
-              <strong>Time:</strong> {slot.time}
+              <strong>Time:</strong> {slot.time}<br />
+              <strong>Type:</strong> {slot.appointmentType === "telehealth" ? "Telehealth" : "In-Person"}
             </p>
 
             <form onSubmit={handleSubmit} className="details-form">
@@ -102,6 +104,7 @@ export default function AppointmentDetails() {
               <strong>Doctor:</strong> {confirmed.doctors?.name || "Dr. Dhriti"}<br />
               <strong>Date:</strong> {confirmed.date}<br />
               <strong>Time:</strong> {confirmed.time}<br />
+              <strong>Type:</strong> {confirmed.appointment_type === "telehealth" ? "Telehealth" : "In-Person"}<br />
               <strong>Contact:</strong> {confirmed.doctors?.phone || "Contact clinic"}
             </p>
 

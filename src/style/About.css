@@ -43,9 +43,19 @@
 .about-image-placeholder {
   width: 100%;
   height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, var(--color-navy-tint-bg), var(--color-green-100));
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(10, 38, 71, 0.1);
+}
+
+.about-image-placeholder img {
+  width: auto;
+  max-width: 220px;
+  max-height: 200px;
+  object-fit: contain;
 }
 
 /* RESPONSIVE */

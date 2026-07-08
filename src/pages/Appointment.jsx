@@ -17,6 +17,7 @@ export default function Appointment() {
   const [loading, setLoading] = useState(false)
   const [selectedSlot, setSelectedSlot] = useState(null)
   const [selectedDoctor, setSelectedDoctor] = useState("")
+  const [appointmentType, setAppointmentType] = useState("in-person")
 
   // Creates slots when needed, then loads the complete schedule for the chosen date.
   const loadSchedule = useCallback(async (date, doctorId) => {
@@ -76,6 +77,24 @@ export default function Appointment() {
         <h1>Book an Appointment</h1>
 
         <div className="calendar-box">
+          <h2>Appointment Type</h2>
+          <div className="appointment-type-toggle">
+            <button
+              type="button"
+              className={`type-option ${appointmentType === "in-person" ? "active" : ""}`}
+              onClick={() => setAppointmentType("in-person")}
+            >
+              🏥 In-Person
+            </button>
+            <button
+              type="button"
+              className={`type-option ${appointmentType === "telehealth" ? "active" : ""}`}
+              onClick={() => setAppointmentType("telehealth")}
+            >
+              💻 Telehealth
+            </button>
+          </div>
+
           <h2>Select a Date</h2>
           <input
             type="date"
@@ -113,7 +132,8 @@ export default function Appointment() {
                     id: slot.id,
                     time: slot.time,
                     date: slot.date,
-                    doctor: slot.doctors
+                    doctor: slot.doctors,
+                    appointmentType
                   })
                 }
               >
@@ -130,6 +150,10 @@ export default function Appointment() {
               <h3>{selectedSlot.doctor?.name || "Provider unavailable"}</h3>
               <p><strong>Date:</strong> {selectedSlot.date}</p>
               <p><strong>Time:</strong> {selectedSlot.time}</p>
+              <p>
+                <strong>Type:</strong>{" "}
+                {selectedSlot.appointmentType === "telehealth" ? "Telehealth" : "In-Person"}
+              </p>
               <p><strong>Contact:</strong> {selectedSlot.doctor?.phone || "Contact clinic"}</p>
 
               <button

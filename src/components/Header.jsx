@@ -18,6 +18,7 @@ export default function Header() {
           <NavLink to="/about">About Us</NavLink>
           <NavLink to="/programs">Programs</NavLink>
           <NavLink to="/providers">Providers</NavLink>
+          <NavLink to="/gallery">Gallery</NavLink>
           <NavLink to="/telehealth">Telehealth</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </nav>

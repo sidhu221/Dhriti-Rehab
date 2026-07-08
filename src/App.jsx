@@ -13,6 +13,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import ForgotPassword from "./pages/ForgotPassword"
 import About from "./pages/About"
+import Gallery from "./pages/Gallery"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
 import Appointment from "./pages/Appointment"
 import AppointmentDetails from "./pages/AppointmentDetails"
@@ -37,6 +38,7 @@ export default function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/about" element={<About />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/appointment" element={<Appointment />} />
       <Route path="/appointment/:id" element={<AppointmentDetails />} />
