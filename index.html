@@ -8,8 +8,17 @@
     <meta property="og:title" content="Dhriti Rehab Center" />
     <meta property="og:description" content="Compassionate psychiatric care. Request a confidential call today." />
     <title>Dhriti Rehab Center</title>
-    <script type="module" crossorigin src="/assets/index-CF2sxB7u.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-85eRGu18.css">
+    <script>
+      // Restores the path stashed by public/404.html so React Router renders
+      // the originally requested route instead of always landing on "/".
+      var redirect = sessionStorage.redirect
+      delete sessionStorage.redirect
+      if (redirect && redirect !== location.pathname) {
+        history.replaceState(null, "", redirect)
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-Dzm64-tg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DPr6SihV.css">
   </head>
   <body>
     <div id="root"></div>
