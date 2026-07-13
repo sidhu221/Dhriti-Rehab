@@ -5,6 +5,7 @@ create table public.doctors (
   name text not null,
   color text not null,
   phone text not null,
+  email text,
   created_at timestamp with time zone default now()
 );
 

@@ -123,11 +123,14 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 VITE_EMAILJS_SERVICE_ID=your-emailjs-service-id
 VITE_EMAILJS_TEMPLATE_ID=your-emailjs-template-id
 VITE_EMAILJS_PUBLIC_KEY=your-emailjs-public-key
+VITE_EMAILJS_DOCTOR_TEMPLATE_ID=your-emailjs-doctor-notification-template-id
 ```
 
 Run `src/sql/schema.sql` against your Supabase project to create the tables, triggers, and RLS policies.
 
-The contact form on the Locations page sends directly to the clinic inbox via [EmailJS](https://www.emailjs.com/) — create a service, an email template whose fields match the form's `name`/`email`/`phone`/`message` inputs, and set the "To Email" in the template to the clinic's address.
+The contact forms on the Locations and Contact pages send directly to the clinic inbox via [EmailJS](https://www.emailjs.com/) — create a service, an email template whose fields match the forms' `name`/`email`/`phone`/`message` inputs, and set the "To Email" in the template to the clinic's address.
+
+Booking an appointment also emails the assigned doctor via a second EmailJS template (`VITE_EMAILJS_DOCTOR_TEMPLATE_ID`) with variables `to_email`, `doctor_name`, `patient_name`, `patient_phone`, `patient_email`, `date`, `time`, and `appointment_type`. Doctors without an `email` set in the `doctors` table fall back to the clinic inbox.
 
 ---
 

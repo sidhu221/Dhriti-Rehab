@@ -4,6 +4,36 @@ import Footer from "../components/Footer"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { bookAppointment } from "../api/appointments"
+import emailjs from "@emailjs/browser"
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const DOCTOR_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_DOCTOR_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const CLINIC_EMAIL = "dhritirehab@gmail.com"
+
+// Notifies the assigned doctor (falling back to the clinic inbox) with the
+// patient's details so they know who's coming in without checking the dashboard.
+// Booking is already confirmed by this point, so a failed notification is
+// logged rather than surfaced as a booking error.
+function notifyDoctor(booking) {
+  emailjs
+    .send(
+      SERVICE_ID,
+      DOCTOR_TEMPLATE_ID,
+      {
+        to_email: booking.doctors?.email || CLINIC_EMAIL,
+        doctor_name: booking.doctors?.name || "Dr. K.B Nihal",
+        patient_name: booking.patients?.name || "",
+        patient_phone: booking.patients?.phone || "",
+        patient_email: booking.patients?.email || "Not provided",
+        date: booking.date,
+        time: booking.time,
+        appointment_type: booking.appointment_type === "telehealth" ? "Telehealth" : "In-Person"
+      },
+      { publicKey: PUBLIC_KEY }
+    )
+    .catch((error) => console.error("Error notifying doctor:", error))
+}
 
 export default function AppointmentDetails() {
   const location = useLocation()
@@ -43,6 +73,7 @@ export default function AppointmentDetails() {
         appointmentType: slot.appointmentType
       })
       setConfirmed(data)
+      notifyDoctor(data)
     } catch (err) {
       console.error(err)
     } finally {
@@ -101,7 +132,7 @@ export default function AppointmentDetails() {
           <div className="details-card">
             <h1>Appointment Confirmed</h1>
             <p>
-              <strong>Doctor:</strong> {confirmed.doctors?.name || "Dr. Dhriti"}<br />
+              <strong>Doctor:</strong> {confirmed.doctors?.name || "Dr. K.B Nihal"}<br />
               <strong>Date:</strong> {confirmed.date}<br />
               <strong>Time:</strong> {confirmed.time}<br />
               <strong>Type:</strong> {confirmed.appointment_type === "telehealth" ? "Telehealth" : "In-Person"}<br />
