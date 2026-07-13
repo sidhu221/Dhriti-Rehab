@@ -130,6 +130,24 @@ Run `src/sql/schema.sql` against your Supabase project to create the tables, tri
 
 The contact forms on the Locations and Contact pages send directly to the clinic inbox via [EmailJS](https://www.emailjs.com/) — create a service, an email template whose fields match the forms' `name`/`email`/`phone`/`message` inputs, and set the "To Email" in the template to the clinic's address.
 
+---
+
+## Tests
+
+**Unit / component tests** (`src/**/__tests__`) run via [Vitest](https://vitest.dev/) + React Testing Library. API tests mock the Supabase client; component tests mock `@emailjs/browser` where relevant. No real database or `.env` needed.
+
+```bash
+npm test          # run once
+npm run test:watch # watch mode
+```
+
+**End-to-end tests** (`e2e/`) run via [Playwright](https://playwright.dev/) against a real browser and the local dev server. Supabase and EmailJS network calls are intercepted (`e2e/fixtures/`), so these don't touch the live database or send real emails either — but they do require `.env` to be present so the app boots (`npm run dev` reads it).
+
+```bash
+npx playwright install chromium   # one-time browser download
+npm run test:e2e
+```
+
 Booking an appointment also emails the assigned doctor via a second EmailJS template (`VITE_EMAILJS_DOCTOR_TEMPLATE_ID`) with variables `to_email`, `doctor_name`, `patient_name`, `patient_phone`, `patient_email`, `date`, `time`, and `appointment_type`. Doctors without an `email` set in the `doctors` table fall back to the clinic inbox.
 
 ---
