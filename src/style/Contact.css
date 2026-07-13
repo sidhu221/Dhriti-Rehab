@@ -58,6 +58,11 @@
   resize: vertical;
 }
 
+.contact-form .form-status {
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
 .contact-submit-btn {
   padding: 12px 20px;
   background: linear-gradient(135deg, var(--color-green-700), var(--color-green-800));

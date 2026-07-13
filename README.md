@@ -120,9 +120,14 @@ You'll need a Supabase project and a `.env` file with:
 ```
 VITE_SUPABASE_URL=your-project-url
 VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_EMAILJS_SERVICE_ID=your-emailjs-service-id
+VITE_EMAILJS_TEMPLATE_ID=your-emailjs-template-id
+VITE_EMAILJS_PUBLIC_KEY=your-emailjs-public-key
 ```
 
 Run `src/sql/schema.sql` against your Supabase project to create the tables, triggers, and RLS policies.
+
+The contact form on the Locations page sends directly to the clinic inbox via [EmailJS](https://www.emailjs.com/) — create a service, an email template whose fields match the form's `name`/`email`/`phone`/`message` inputs, and set the "To Email" in the template to the clinic's address.
 
 ---
 

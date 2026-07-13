@@ -1,6 +1,31 @@
 import "../style/Location.css"
+import { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export default function Location() {
+  const formRef = useRef(null)
+  const [status, setStatus] = useState("idle")
+
+  // Sends the form straight to the clinic inbox via EmailJS - no backend involved.
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus("sending")
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY
+      })
+      setStatus("success")
+      formRef.current.reset()
+    } catch (error) {
+      console.error("Error sending contact form:", error)
+      setStatus("error")
+    }
+  }
+
   return (
     <section className="location-section">
       <div className="location-container">
@@ -25,7 +50,7 @@ export default function Location() {
 
           <div className="info-block">
             <h3>Email</h3>
-            <p>dhritimind_1798@dhritimind.com</p>
+            <p>dhritirehab@gmail.com</p>
           </div>
 
           {/* GOOGLE MAP EMBED */}
@@ -43,31 +68,50 @@ export default function Location() {
           </div>
         </div>
 
-        {/* RIGHT SIDE — CONTACT FORM */}
-        <form className="location-form">
+       {/* RIGHT SIDE — CONTACT FORM */}
+        <form className="location-form" ref={formRef} onSubmit={handleSubmit}>
           <label>
             Full name
-            <input type="text" placeholder="Jane Doe" />
+            <input type="text" name="name" placeholder="Jane Doe" required />
           </label>
 
           <label>
             Email
-            <input type="email" placeholder="jane@example.com" />
+            <input type="email" name="email" placeholder="jane@example.com" required />
           </label>
 
           <label>
             Phone (optional)
-            <input type="text" placeholder="+91 1111111111" />
+            <input type="tel" name="phone" placeholder="+91 1111111111" />
           </label>
 
           <label>
             How can we help?
-            <textarea placeholder="Tell us a little about what brings you here." />
+            <textarea
+              name="message"
+              placeholder="Tell us a little about what brings you here."
+            />
           </label>
 
-          <button type="submit" className="location-button">
-            Request a confidential call
+          <button
+            type="submit"
+            className="location-button"
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? "Sending…" : "Request a confidential call"}
           </button>
+
+          {status === "success" && (
+            <p className="form-status" role="status">
+              Thank you — we've received your request and will call you soon.
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="form-status" role="alert">
+              Something went wrong. Please try again or call the clinic directly.
+            </p>
+          )}
 
           <p className="privacy-note">
             Your information is encrypted and reviewed only by our intake clinicians.

@@ -1,8 +1,33 @@
 import "../style/Contact.css"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export default function Contact() {
+  const formRef = useRef(null)
+  const [status, setStatus] = useState("idle")
+
+  // Sends the form straight to the clinic inbox via EmailJS - no backend involved.
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus("sending")
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY
+      })
+      setStatus("success")
+      formRef.current.reset()
+    } catch (error) {
+      console.error("Error sending contact form:", error)
+      setStatus("error")
+    }
+  }
+
   return (
     <>
       <Header />
@@ -28,7 +53,7 @@ export default function Contact() {
               </p>
               <br></br>
               <p><strong>Email:</strong><br />
-                dhritimind_1798@dhritimind.com
+                dhritirehab@gmail.com
               </p>
             </div>
           </div>
@@ -37,22 +62,38 @@ export default function Contact() {
           <div className="contact-right">
             <h2>Send Us a Message</h2>
 
-            <form className="contact-form">
+            <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
               <label>Your Name</label>
-              <input type="text" placeholder="Enter your name" />
+              <input type="text" name="name" placeholder="Enter your name" required />
 
               <label>Your Email</label>
-              <input type="email" placeholder="Enter your email" />
+              <input type="email" name="email" placeholder="Enter your email" required />
 
               <label>Phone Number</label>
-              <input type="text" placeholder="Enter your phone number" />
+              <input type="text" name="phone" placeholder="Enter your phone number" />
 
               <label>Your Message</label>
-              <textarea placeholder="Write your message here"></textarea>
+              <textarea name="message" placeholder="Write your message here"></textarea>
 
-              <button type="submit" className="contact-submit-btn">
-                Send Message
+              <button
+                type="submit"
+                className="contact-submit-btn"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? "Sending…" : "Send Message"}
               </button>
+
+              {status === "success" && (
+                <p className="form-status" role="status">
+                  Thank you — we've received your message and will be in touch soon.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="form-status" role="alert">
+                  Something went wrong. Please try again or call the clinic directly.
+                </p>
+              )}
             </form>
           </div>
 

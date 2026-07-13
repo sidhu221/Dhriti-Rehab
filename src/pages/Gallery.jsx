@@ -8,7 +8,7 @@ const photos = [
   { src: "/reception_2.jpeg", caption: "Lounge/Reception Area" },
   { src: "/hospital_bed.jpeg", caption: "Single Bed" },
   {src: "/general_ward_2.jpeg", caption: "Standard Ward" },
-  { src: "/general_ward.jpeg", caption: "Detox/Stabilization Ward" },
+  { src: "/general_ward.jpeg", caption: "Spec Ward" },
   { src: "/Exterior Hallway.jpeg", caption: "Building Exterior" },
 ]
 
