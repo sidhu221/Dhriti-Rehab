@@ -8,6 +8,15 @@
     <meta property="og:title" content="Dhriti Rehab Center" />
     <meta property="og:description" content="Compassionate psychiatric care. Request a confidential call today." />
     <title>Dhriti Rehab Center</title>
+    <script>
+      // Restores the path stashed by public/404.html so React Router renders
+      // the originally requested route instead of always landing on "/".
+      var redirect = sessionStorage.redirect
+      delete sessionStorage.redirect
+      if (redirect && redirect !== location.pathname) {
+        history.replaceState(null, "", redirect)
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

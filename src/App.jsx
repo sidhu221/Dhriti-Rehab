@@ -19,6 +19,7 @@ import Appointment from "./pages/Appointment"
 import AppointmentDetails from "./pages/AppointmentDetails"
 import DoctorDashboard from "./pages/DoctorDashboard"
 import PatientDashboard from "./pages/PatientDashboard"
+import NotFound from "./pages/NotFound"
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
       <Route path="/appointment/:id" element={<AppointmentDetails />} />
       <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
       <Route path="/patient-dashboard" element={<PatientDashboard />} />
+      <Route path="*" element={<NotFound />} />
 
     </Routes>
   )

@@ -1,4 +1,5 @@
 import "../style/Hero.css"
+import { Link } from "react-router-dom"
 
 export default function Hero() {
   return (
@@ -13,12 +14,12 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="/appointment" className="primary-btn">
+          <Link to="/appointment" className="primary-btn">
             Book Appointment
-          </a>
-          <a href="/programs" className="secondary-btn">
+          </Link>
+          <Link to="/programs" className="secondary-btn">
             Explore Programs
-          </a>
+          </Link>
         </div>
 
         <div className="hero-stats">

@@ -1,0 +1,48 @@
+.not-found-page {
+  padding: 160px 20px 120px;
+  display: flex;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+.not-found-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(10, 38, 71, 0.1);
+  padding: 50px 40px;
+  text-align: center;
+  max-width: 480px;
+}
+
+.not-found-card h1 {
+  font-size: 4rem;
+  color: var(--color-heading);
+  margin-bottom: 10px;
+}
+
+.not-found-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.not-found-redirect-note {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.not-found-card button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-orange-600), var(--color-orange-700));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.not-found-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 112, 31, 0.3);
+}

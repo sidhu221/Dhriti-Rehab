@@ -1,4 +1,5 @@
 import "../style/ProgramsHome.css"
+import { Link } from "react-router-dom"
 
 export default function Programs() {
   const programs = [
@@ -51,9 +52,9 @@ export default function Programs() {
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
 
-              <a className="program-link" href={p.link}>
+              <Link className="program-link" to={p.link}>
                 Learn More →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

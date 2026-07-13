@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dhriti Rehab Center</title>
+    <script>
+      // GitHub Pages has no server-side routing, so a direct hit on any
+      // in-app path (e.g. a refresh on /appointment) lands here. Stash the
+      // path and bounce to index.html so React Router can take over.
+      sessionStorage.redirect = location.pathname + location.search + location.hash
+      location.replace(location.origin)
+    </script>
+  </head>
+  <body></body>
+</html>
